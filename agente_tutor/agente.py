@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 
 from agno.agent import Agent
-from agno.models.openai.like import OpenAILike
+from agno.models.openai import OpenAILike
 
 # Cargar las variables del archivo .env
 load_dotenv()
