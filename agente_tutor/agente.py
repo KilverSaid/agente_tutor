@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from agno.agent import Agent
 from agno.models.openai.like import OpenAILike
 
+# Cargar las variables del archivo .env
 load_dotenv()
 
 agente = Agent(
@@ -11,7 +12,7 @@ agente = Agent(
     model=OpenAILike(
         id=os.getenv("LM_STUDIO_MODEL"),
         base_url=os.getenv("LM_STUDIO_BASE_URL"),
-        api_key="lm-studio",
+        api_key=os.getenv("LM_STUDIO_API_KEY", "lm-studio"),
     ),
     instructions=[
         "Responde siempre en español.",
@@ -22,7 +23,6 @@ agente = Agent(
     ],
     markdown=True,
 )
-
 
 def crear_agente_tutor():
     return agente
