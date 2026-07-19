@@ -1,10 +1,9 @@
 import streamlit as st
-
 from agente import crear_agente_tutor
 
 st.set_page_config(
     page_title="Agente Tutor de IA",
-    page_icon="",
+    page_icon="🤖",
     layout="centered",
 )
 
@@ -27,14 +26,13 @@ tema = st.text_input(
 
 if st.button("Explicar tema", type="primary"):
     if not tema.strip():
-        st.warning("Escribe un tema antes de continuar.")
+      st.warning("Escribe un tema antes de continuar.")
     else:
         mensaje = f"""
         Tema: {tema}
         Nivel del estudiante: {nivel}
 
         La respuesta debe contener:
-
         1. Una explicación sencilla.
         2. Un ejemplo práctico.
         3. Una analogía, cuando sea útil.
